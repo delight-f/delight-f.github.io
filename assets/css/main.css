@@ -1328,7 +1328,7 @@ input, select, textarea {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		color: #777777;
-		font-size: 16pt;
+		font-size: 14pt;
 		line-height: 1.75em;
 	}
 
@@ -1379,15 +1379,21 @@ input, select, textarea {
 		letter-spacing: -0.015em;
 	}
 
-	h3, h4, h5, h6 {
+	h3 {
 		font-size: 1.25em;
 		letter-spacing: -0.015em;
 	}
 
-	h7 {
+	h4 {
 		font-size: 1.0em;
 		letter-spacing: -0.015em;
 	}
+
+	h5, h6 {
+		font-size: 0.9em;
+		letter-spacing: -0.015em;
+	}
+	
 	@media screen and (max-width: 736px) {
 
 		h1 {
