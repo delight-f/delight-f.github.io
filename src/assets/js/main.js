@@ -92,6 +92,7 @@
           if (r.ok) {
             if (success) success.style.display = "block";
             form.style.display = "none";
+            if (btn) btn.disabled = false;
           } else {
             alert(
               "Something went wrong. Please try again or email me directly.",
