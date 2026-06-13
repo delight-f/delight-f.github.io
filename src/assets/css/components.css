@@ -414,6 +414,12 @@ ul.actions li:first-child {
     margin-bottom: 0.5em;
 }
 
+.box.style2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .box.style2 h3 {
     margin-bottom: 0.25em;
 }
