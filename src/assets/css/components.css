@@ -52,7 +52,6 @@ blockquote {
     font-style: italic;
 }
 
-/* ----- Headings ----- */
 h1,
 h2,
 h3,
@@ -139,9 +138,6 @@ footer > p {
     font-size: var(--font-size-lead);
 }
 
-/* ===========================================
-   Tables
-   =========================================== */
 table {
     width: 100%;
 }
@@ -174,9 +170,6 @@ table.default thead {
     color: var(--color-bg-white);
 }
 
-/* ===========================================
-   Section / Article
-   =========================================== */
 section,
 article {
     margin-bottom: var(--spacing-hr);
@@ -189,9 +182,6 @@ article:last-child {
     margin-bottom: 0;
 }
 
-/* ===========================================
-   Image
-   =========================================== */
 .image {
     display: inline-block;
     position: relative;
@@ -228,9 +218,6 @@ article:last-child {
     width: auto;
 }
 
-/* ===========================================
-   Button
-   =========================================== */
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -325,9 +312,6 @@ button.alt:active,
     background-color: var(--color-btn-alt-active);
 }
 
-/* ===========================================
-   Lists
-   =========================================== */
 ul {
     list-style: disc;
     padding-left: 1em;
@@ -346,9 +330,6 @@ ol li {
     padding-left: 0.25em;
 }
 
-/* ===========================================
-   Social
-   =========================================== */
 ul.social {
     cursor: default;
     margin: 0;
@@ -395,7 +376,6 @@ ul.social li a:hover {
     background-color: transparent;
 }
 
-/* Brand-specific social colours */
 ul.social li a.linkedin {
     background-color: #006599;
 }
@@ -404,9 +384,6 @@ ul.social li a.linkedin:hover {
     background-color: #0077b5;
 }
 
-/* ===========================================
-   Actions
-   =========================================== */
 ul.actions {
     list-style: none;
     padding-left: 0;
@@ -422,9 +399,6 @@ ul.actions li:first-child {
     margin-left: 0;
 }
 
-/* ===========================================
-   Box (card)
-   =========================================== */
 .box {
     background: var(--color-bg-white);
     box-shadow: var(--shadow-box-inset), var(--shadow-box);
@@ -452,9 +426,6 @@ ul.actions li:first-child {
     width: auto;
 }
 
-/* ===========================================
-   Icons (inline SVG — replaces Font Awesome)
-   =========================================== */
 .icon {
     text-decoration: none;
     display: inline-block;
@@ -479,13 +450,10 @@ ul.actions li:first-child {
 
 .icon.featured svg {
     width: var(--font-size-icon-featured);
-    height: var(--font-size-icon-featured);
+    height: auto;
     margin: 0 auto;
 }
 
-/* ===========================================
-   Navigation
-   =========================================== */
 #nav {
     background-color: var(--color-nav-bg);
     text-align: center;
@@ -547,9 +515,6 @@ ul.actions li:first-child {
     border-top: solid 0.6em var(--color-nav-bg);
 }
 
-/* ===========================================
-   Article sections (#top, #work, #portfolio, #contact)
-   =========================================== */
 body > article {
     margin-bottom: 0;
 }
@@ -583,14 +548,10 @@ body > article {
     color: inherit;
 }
 
-/* Contact section footer */
 #contact footer {
     font-size: 0.9em;
 }
 
-/* ===========================================
-   Copyright
-   =========================================== */
 #copyright {
     color: var(--color-copyright);
     font-size: 1em;
@@ -626,9 +587,6 @@ body > article {
     color: var(--color-copyright-hover);
 }
 
-/* ===========================================
-   Form
-   =========================================== */
 form label {
     color: var(--color-heading);
     font-weight: var(--font-weight-heavy);
@@ -709,9 +667,6 @@ form ::-moz-focus-inner {
     border: 0;
 }
 
-/* ===========================================
-   Responsive: Large (981px – 1280px)
-   =========================================== */
 @media screen and (max-width: 1280px) {
     header {
         margin: 0 0 4em 0;
@@ -728,9 +683,6 @@ form ::-moz-focus-inner {
     }
 }
 
-/* ===========================================
-   Responsive: Medium (737px – 980px)
-   =========================================== */
 @media screen and (max-width: 980px) {
     #top {
         text-align: center;
@@ -742,11 +694,7 @@ form ::-moz-focus-inner {
     }
 }
 
-/* ===========================================
-   Responsive: Small (≤ 736px)
-   =========================================== */
 @media screen and (max-width: 736px) {
-    /* Headings */
     h1,
     h2,
     h3,
@@ -782,13 +730,11 @@ form ::-moz-focus-inner {
         margin: 1.5em 0 2em 0;
     }
 
-    /* Section / Article */
     section,
     article {
         clear: both;
     }
 
-    /* Button */
     input[type="button"],
     input[type="submit"],
     input[type="reset"],
@@ -809,7 +755,6 @@ form ::-moz-focus-inner {
         letter-spacing: 0;
     }
 
-    /* Social */
     ul.social {
         padding: 1em 0.5em 0;
     }
@@ -831,7 +776,6 @@ form ::-moz-focus-inner {
         fill: var(--color-bg-white);
     }
 
-    /* Actions */
     ul.actions {
         margin: 0;
     }
@@ -845,7 +789,6 @@ form ::-moz-focus-inner {
         margin-top: 0;
     }
 
-    /* Box */
     .box {
         padding: 30px 20px;
         margin: 0 0 20px 0 !important;
@@ -879,7 +822,6 @@ form ::-moz-focus-inner {
         margin-right: auto !important;
     }
 
-    /* Nav */
     #nav {
         height: var(--nav-height-small);
         line-height: var(--nav-height-small);
@@ -897,7 +839,6 @@ form ::-moz-focus-inner {
         background-color: transparent;
     }
 
-    /* Article sections */
     #top {
         padding: 3em 0;
     }
@@ -918,7 +859,6 @@ form ::-moz-focus-inner {
         margin: 0;
     }
 
-    /* Copyright */
     #copyright {
         font-size: 1em;
         margin: 0;
