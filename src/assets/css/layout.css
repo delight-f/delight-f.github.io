@@ -700,18 +700,22 @@
 }
 
 .wrapper.style4 form input[type="text"],
+.wrapper.style4 form input[type="email"],
 .wrapper.style4 form input[type="password"],
 .wrapper.style4 form select,
 .wrapper.style4 form textarea {
-    border: none;
-    background: var(--color-dark-input-bg);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    background: var(--color-bg-white);
+    color: var(--color-heading);
 }
 
 .wrapper.style4 form input[type="text"]:focus,
+.wrapper.style4 form input[type="email"]:focus,
 .wrapper.style4 form input[type="password"]:focus,
 .wrapper.style4 form select:focus,
 .wrapper.style4 form textarea:focus {
-    background: var(--color-dark-input-focus);
+    background: var(--color-bg-white);
+    box-shadow: var(--shadow-input-focus);
 }
 
 /* ----- Wrapper responsive ----- */

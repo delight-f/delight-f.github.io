@@ -396,9 +396,17 @@
                 <div class="row">
                     <div class="col-12">
                         <form
+                            id="contact-form"
                             action="https://formspree.io/f/mbjnkqka"
                             method="post"
                         >
+                            <input
+                                type="text"
+                                name="_gotcha"
+                                style="display: none !important"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
                             <div class="row">
                                 <div class="col-6 col-12-small">
                                     <label for="contact-name" class="sr-only"
@@ -472,6 +480,21 @@
                                 </div>
                             </div>
                         </form>
+                        <div
+                            id="form-success"
+                            style="
+                                display: none;
+                                text-align: center;
+                                padding: 2em;
+                                color: #fff;
+                            "
+                        >
+                            <h3>Thank you</h3>
+                            <p>
+                                Your message has been sent. I will respond as
+                                soon as possible.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">

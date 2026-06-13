@@ -37,4 +37,79 @@
       });
     });
   });
+
+  // ----- Contact form: fetch-based submission -----
+  var form = document.getElementById("contact-form");
+  var success = document.getElementById("form-success");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Honeypot check — if filled, silently pretend it worked
+      var honeypot = form.querySelector('[name="_gotcha"]');
+      if (honeypot && honeypot.value) {
+        if (success) success.style.display = "block";
+        form.style.display = "none";
+        return;
+      }
+
+      // Validate required fields
+      var valid = true;
+      var fields = form.querySelectorAll("[required]");
+      fields.forEach(function (f) {
+        if (!f.value.trim()) {
+          f.style.borderColor = "#e74c3c";
+          valid = false;
+        } else {
+          f.style.borderColor = "";
+        }
+      });
+
+      // Validate email format
+      var email = form.querySelector('[name="email"]');
+      if (
+        email &&
+        email.value &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+      ) {
+        email.style.borderColor = "#e74c3c";
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Disable submit button
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) btn.disabled = true;
+
+      // Send via fetch
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (r) {
+          if (r.ok) {
+            if (success) success.style.display = "block";
+            form.style.display = "none";
+          } else {
+            alert(
+              "Something went wrong. Please try again or email me directly.",
+            );
+            if (btn) btn.disabled = false;
+          }
+        })
+        .catch(function () {
+          alert("Something went wrong. Please try again or email me directly.");
+          if (btn) btn.disabled = false;
+        });
+    });
+
+    // Clear error styles on input
+    form.querySelectorAll("input, textarea").forEach(function (el) {
+      el.addEventListener("input", function () {
+        this.style.borderColor = "";
+      });
+    });
+  }
 })();
