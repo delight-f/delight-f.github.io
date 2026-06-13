@@ -17,3 +17,7 @@ node_modules/
 
 # Build artifacts
 node_modules/
+
+# Internal docs (handoffs, development notes)
+docs/handoffs/
+.docs/
