@@ -1,0 +1,16 @@
+# Server logs
+server.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dev
+node_modules/
+*.tsbuildinfo
