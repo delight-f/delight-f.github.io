@@ -14,3 +14,19 @@
     position: absolute;
     width: 1px;
 }
+
+/* ----- Skip to main content link (visible on focus) ----- */
+.skip-link {
+    background: #fff;
+    color: #1b1f22;
+    font-weight: bold;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: -100%;
+    z-index: 10000;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
