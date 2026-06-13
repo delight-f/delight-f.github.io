@@ -14,15 +14,3 @@
     position: absolute;
     width: 1px;
 }
-
-/* ----- Preload animation lock (toggled by JS) ----- */
-body.is-preload *,
-body.is-preload *::before,
-body.is-preload *::after {
-    -moz-animation: none !important;
-    -webkit-animation: none !important;
-    animation: none !important;
-    -moz-transition: none !important;
-    -webkit-transition: none !important;
-    transition: none !important;
-}
