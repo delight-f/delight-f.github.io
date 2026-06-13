@@ -883,6 +883,7 @@ form ::-moz-focus-inner {
     #nav {
         height: var(--nav-height-small);
         line-height: var(--nav-height-small);
+        overflow: hidden;
     }
 
     #nav a {
