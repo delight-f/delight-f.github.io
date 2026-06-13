@@ -835,7 +835,7 @@ form ::-moz-focus-inner {
     }
 
     #nav a {
-        padding: 0 0.75em;
+        padding: 0 0.5em;
         height: inherit;
         line-height: inherit;
         border-radius: 0;
