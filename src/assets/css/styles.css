@@ -756,8 +756,8 @@ sup {
    =========================================== */
 
 .hero {
-	padding-top: calc(var(--section-py) + 3.5rem);
-	padding-bottom: var(--section-py);
+	padding-top: calc(var(--section-py));
+	padding-bottom: var(--space-2xl);
 	background-color: var(--color-surface);
 	overflow: hidden;
 }
@@ -843,7 +843,7 @@ sup {
 .hero__tagline {
 	font-size: var(--text-xl);
 	color: var(--color-text);
-	margin-bottom: var(--space-2xl);
+	margin-bottom: var(--space-xl);
 	max-width: 50rem;
 	line-height: var(--line-height-small);
 }
@@ -879,7 +879,7 @@ sup {
 
 @media screen and (max-width: 768px) {
 	.hero {
-		padding-top: calc(var(--section-py) + 3rem);
+		padding-top: calc(var(--section-py));
 		text-align: center;
 	}
 
