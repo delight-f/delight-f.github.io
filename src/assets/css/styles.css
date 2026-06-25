@@ -939,20 +939,17 @@ sup {
 	padding-bottom: 0;
 }
 
-.about-page .section__header {
-	margin-bottom: var(--space-xl);
-}
-
 .about-page .bio {
 	max-width: 48rem;
-	margin: 0 auto;
+	padding-left: var(--space-lg);
+	padding-right: var(--space-lg);
 }
 
 .bio__text h3 {
 	font-family: var(--font-display);
 	font-size: var(--text-2xl);
 	color: var(--color-primary);
-	margin-top: var(--space-xl);
+	margin-top: var(--space-lg);
 	margin-bottom: var(--space-sm);
 }
 
@@ -963,7 +960,7 @@ sup {
 .bio__text p {
 	font-size: var(--text-base);
 	line-height: var(--line-height-body);
-	margin-bottom: var(--space-lg);
+	margin-bottom: var(--space-md);
 	max-width: 70ch;
 }
 
