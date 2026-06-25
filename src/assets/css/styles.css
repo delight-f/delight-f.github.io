@@ -927,12 +927,18 @@ sup {
 	padding-bottom: 0;
 }
 
+.about-page .section__title {
+	text-align: center;
+	margin-bottom: var(--space-xl);
+}
+
 .about-page .bio {
 	max-width: 48rem;
 	padding-left: var(--space-lg);
 	padding-right: var(--space-lg);
 }
 
+.bio__text h2,
 .bio__text h3 {
 	font-family: var(--font-display);
 	font-size: var(--text-2xl);
@@ -941,6 +947,7 @@ sup {
 	margin-bottom: var(--space-sm);
 }
 
+.bio__text h2:first-child,
 .bio__text h3:first-child {
 	margin-top: 0;
 }
