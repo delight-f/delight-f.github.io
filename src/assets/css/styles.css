@@ -984,22 +984,6 @@ main .page-footer {
 	margin-bottom: var(--space-xl);
 }
 
-.section__heading-label {
-	display: block;
-	font-family: var(--font-body);
-	font-size: var(--text-lg);
-	font-weight: var(--weight-semibold);
-	color: var(--color-text-muted);
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
-	margin-bottom: var(--space-xs);
-}
-
-.section__heading-name {
-	display: block;
-	white-space: nowrap;
-}
-
 .about-page .bio {
 	max-width: 72rem;
 	margin: 0 auto;
