@@ -972,6 +972,7 @@ main .page-footer {
 
 .about-page .bio {
 	max-width: 48rem;
+	margin: 0 auto;
 	padding-left: var(--space-lg);
 	padding-right: var(--space-lg);
 }
