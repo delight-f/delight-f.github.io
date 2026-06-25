@@ -889,8 +889,9 @@ main .page-footer {
 	line-height: var(--line-height-small);
 }
 
-.tagline__location::before {
-	content: "— ";
+.tagline__location {
+	display: block;
+	margin-top: var(--space-md);
 }
 
 .hero__ctas {
@@ -961,15 +962,6 @@ main .page-footer {
 
 	.cred__sep {
 		display: none;
-	}
-
-	.tagline__location {
-		display: block;
-		margin-top: var(--space-md);
-	}
-
-	.tagline__location::before {
-		content: none;
 	}
 
 	.hero__ctas {
