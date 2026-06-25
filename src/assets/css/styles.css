@@ -889,6 +889,10 @@ main .page-footer {
 	line-height: var(--line-height-small);
 }
 
+.tagline__location::before {
+	content: "— ";
+}
+
 .hero__ctas {
 	display: flex;
 	flex-wrap: wrap;
@@ -962,6 +966,10 @@ main .page-footer {
 	.tagline__location {
 		display: block;
 		margin-top: var(--space-md);
+	}
+
+	.tagline__location::before {
+		content: none;
 	}
 
 	.hero__ctas {
