@@ -667,6 +667,22 @@ sup {
 		display: flex;
 	}
 
+	.nav__list--open ~ .nav__toggle svg path:first-child {
+		transform: rotate(45deg);
+		transform-origin: center;
+		translate: 0 6px;
+	}
+
+	.nav__list--open ~ .nav__toggle svg path:nth-child(2) {
+		opacity: 0;
+	}
+
+	.nav__list--open ~ .nav__toggle svg path:last-child {
+		transform: rotate(-45deg);
+		transform-origin: center;
+		translate: 0 -6px;
+	}
+
 	.nav__link {
 		padding: var(--space-sm) var(--space-lg);
 		line-height: 1.5;
@@ -1222,7 +1238,7 @@ sup {
 }
 
 .social-link:hover {
-	background-color: #0077b5;
+	background-color: var(--color-accent);
 	color: var(--color-surface);
 	transform: translateY(-2px);
 }

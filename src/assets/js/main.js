@@ -19,10 +19,34 @@
 
 			navList.addEventListener("click", function (e) {
 				if (e.target.closest(".nav__link")) {
-					navList.classList.remove("nav__list--open");
-					toggle.setAttribute("aria-expanded", "false");
+					closeNav();
 				}
 			});
+
+			// Close on Escape key
+			document.addEventListener("keydown", function (e) {
+				if (
+					e.key === "Escape" &&
+					navList.classList.contains("nav__list--open")
+				) {
+					closeNav();
+				}
+			});
+
+			// Close on click outside
+			document.addEventListener("click", function (e) {
+				if (
+					navList.classList.contains("nav__list--open") &&
+					!e.target.closest(".nav")
+				) {
+					closeNav();
+				}
+			});
+		}
+
+		function closeNav() {
+			navList.classList.remove("nav__list--open");
+			toggle.setAttribute("aria-expanded", "false");
 		}
 
 		// ----- 2. Contact form: enhanced UX -----
