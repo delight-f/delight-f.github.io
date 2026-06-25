@@ -768,6 +768,26 @@ sup {
 }
 
 /* ===========================================
+   Main content — push footer to bottom
+   =========================================== */
+
+main {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 3.5rem);
+}
+
+main .page-footer {
+	margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		min-height: calc(100vh - 3rem);
+	}
+}
+
+/* ===========================================
    Hero Section
    =========================================== */
 
@@ -847,11 +867,6 @@ sup {
 	margin-bottom: var(--space-xl);
 	line-height: var(--line-height-small);
 	letter-spacing: 0.03em;
-}
-
-.credential-sep {
-	display: inline-block;
-	width: 2rem;
 }
 
 .hero__name {
