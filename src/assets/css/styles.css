@@ -457,6 +457,7 @@ sup {
 .section__title {
 	font-size: var(--text-4xl);
 	margin-bottom: 0;
+	text-wrap: balance;
 }
 
 .page-nav {
