@@ -131,8 +131,10 @@ A deliberate pairing that avoids the medical default of navy-blue-and-white. The
 ### Dark Mode
 Dark mode inverts surfaces while keeping the nav dark and the accent coral. Surface becomes a cool dark (`#121618`), text becomes warm light (`#d6dadd`), and the teal accent lightens (`#2ea99a`) for readability against dark backgrounds.
 
+**CTA Adaptation.** In dark mode, the primary CTA button shifts from coral to light teal (`--color-accent`: `#2ea99a`) with light text. The coral-against-dark contrast is insufficient to maintain the CTA's stopping power, so the button adopts the lightened teal accent instead. This is an intentional functional concession: the CTA sacrifices its signature coral to preserve contrast and visibility. The coral accent remains on hover states and ghost button borders where background contrast is manageable.
+
 ### Named Rules
-**The One CTA Rule.** Coral is reserved exclusively for the primary call to action on each page. It appears once per page — on the home hero, on the contact form. Overuse would dilute its stopping power.
+**The One CTA Rule.** In light mode, coral is reserved exclusively for the primary call to action on each page. It appears once per page — on the home hero, on the contact form. Overuse would dilute its stopping power. In dark mode, the CTA shifts to light teal (see Dark Mode → CTA Adaptation above); the One CTA Rule governs placement, not colour.
 
 ## 3. Typography
 

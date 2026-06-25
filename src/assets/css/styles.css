@@ -464,7 +464,7 @@ sup {
 	display: flex;
 	justify-content: space-between;
 	gap: var(--space-md);
-	margin-top: var(--space-xl);
+	margin-top: var(--space-4xl);
 	padding-top: var(--space-md);
 	border-top: 1px solid var(--color-accent);
 }
@@ -996,13 +996,27 @@ main .page-footer {
 	font-family: var(--font-display);
 	font-size: var(--text-2xl);
 	color: var(--color-primary);
-	margin-top: var(--space-lg);
+	margin-top: var(--space-xl);
 	margin-bottom: var(--space-sm);
+	padding-top: var(--space-md);
+	border-top: 2px solid var(--color-primary);
 }
 
 .bio__text h2:first-child,
 .bio__text h3:first-child {
 	margin-top: 0;
+	border-top: none;
+	padding-top: 0;
+}
+
+.bio__text .philosophy-section + p {
+	padding-left: var(--space-lg);
+	border-left: 3px solid var(--color-accent-warm);
+}
+
+.bio__text .philosophy-section + p + p {
+	padding-left: var(--space-lg);
+	border-left: 3px solid var(--color-accent-warm);
 }
 
 .bio__text p {
@@ -1099,6 +1113,8 @@ main .page-footer {
 	line-height: var(--line-height-normal);
 	flex: 1;
 	text-wrap: pretty;
+	overflow-wrap: break-word;
+	hyphens: auto;
 }
 
 @media screen and (max-width: 768px) {
