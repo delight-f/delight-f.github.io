@@ -1,116 +1,151 @@
 // =============================================================
-// main.js — www.amnestic.org
-// Vanilla JS replacement for jQuery 3.6.0 + jquery.scrolly.
-// ~700 bytes minified vs ~87 KB for the previous dependency.
+// main.js — amnestic.org 2026 multi-page redesign
+// Vanilla JS: nav hamburger, contact form UX
 // =============================================================
 
 (function () {
-  "use strict";
+	"use strict";
 
-  // ----- On DOM ready -----
-  document.addEventListener("DOMContentLoaded", function () {
-    // 1. Remove .is-preload to unlock CSS transitions/animations
-    document.body.classList.remove("is-preload");
+	document.addEventListener("DOMContentLoaded", function () {
+		// ----- 1. Hamburger toggle (mobile nav) -----
+		var toggle = document.querySelector(".nav__toggle");
+		var navList = document.querySelector(".nav__list");
 
-    // 2. Smooth-scroll for nav links and .scrolly links
-    var links = document.querySelectorAll('#nav a[href^="#"], .scrolly');
+		if (toggle && navList) {
+			toggle.addEventListener("click", function () {
+				var isOpen = navList.classList.toggle("nav__list--open");
+				toggle.setAttribute("aria-expanded", isOpen);
+			});
 
-    Array.prototype.forEach.call(links, function (link) {
-      link.addEventListener("click", function (e) {
-        var targetId = this.getAttribute("href");
-        if (targetId && targetId.charAt(0) === "#") {
-          var target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            var navHeight = document.getElementById("nav").offsetHeight;
-            var targetTop =
-              target.getBoundingClientRect().top +
-              window.pageYOffset -
-              navHeight;
+			navList.addEventListener("click", function (e) {
+				if (e.target.closest(".nav__link")) {
+					navList.classList.remove("nav__list--open");
+					toggle.setAttribute("aria-expanded", "false");
+				}
+			});
+		}
 
-            window.scrollTo({
-              top: targetTop,
-              behavior: "smooth",
-            });
-          }
-        }
-      });
-    });
-  });
+		// ----- 2. Contact form: enhanced UX -----
+		var form = document.getElementById("contact-form");
+		var success = document.getElementById("form-success");
+		var errorBanner = document.getElementById("form-error-banner");
 
-  // ----- Contact form: fetch-based submission -----
-  var form = document.getElementById("contact-form");
-  var success = document.getElementById("form-success");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+		if (form && success) {
+			form.addEventListener("submit", function (e) {
+				e.preventDefault();
 
-      // Honeypot check — if filled, silently pretend it worked
-      var honeypot = form.querySelector('[name="_gotcha"]');
-      if (honeypot && honeypot.value) {
-        if (success) success.style.display = "block";
-        form.style.display = "none";
-        return;
-      }
+				clearErrors(form);
 
-      // Validate required fields
-      var valid = true;
-      var fields = form.querySelectorAll("[required]");
-      fields.forEach(function (f) {
-        if (!f.value.trim()) {
-          f.style.borderColor = "#e74c3c";
-          valid = false;
-        } else {
-          f.style.borderColor = "";
-        }
-      });
+				var honeypot = form.querySelector('[name="_gotcha"]');
+				if (honeypot && honeypot.value) {
+					success.classList.add("form-success--visible");
+					form.style.display = "none";
+					return;
+				}
 
-      // Validate email format
-      var email = form.querySelector('[name="email"]');
-      if (
-        email &&
-        email.value &&
-        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
-      ) {
-        email.style.borderColor = "#e74c3c";
-        valid = false;
-      }
+				var valid = true;
+				var fields = form.querySelectorAll("[required]");
+				fields.forEach(function (f) {
+					var group = f.closest(".form__group");
+					var errorEl = group ? group.querySelector(".form__error") : null;
+					if (!f.value.trim()) {
+						if (group) group.classList.add("form__group--error");
+						if (errorEl) errorEl.textContent = "This field is required.";
+						valid = false;
+					} else {
+						if (group) group.classList.remove("form__group--error");
+						if (errorEl) errorEl.textContent = "";
+					}
+				});
 
-      if (!valid) return;
+				var email = form.querySelector('[name="email"]');
+				if (email && email.value) {
+					if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+						var emailGroup = email.closest(".form__group");
+						var emailError = emailGroup
+							? emailGroup.querySelector(".form__error")
+							: null;
+						if (emailGroup) emailGroup.classList.add("form__group--error");
+						if (emailError)
+							emailError.textContent = "Please enter a valid email address.";
+						valid = false;
+					}
+				}
 
-      // Disable submit button
-      var btn = form.querySelector('[type="submit"]');
-      if (btn) btn.disabled = true;
+				if (!valid) return;
 
-      // Send via fetch
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      })
-        .then(function (r) {
-          if (r.ok) {
-            if (success) success.style.display = "block";
-            form.style.display = "none";
-            if (btn) btn.disabled = false;
-          } else {
-            alert(
-              "Something went wrong. Please try again or email me directly.",
-            );
-            if (btn) btn.disabled = false;
-          }
-        })
-        .catch(function () {
-          alert("Something went wrong. Please try again or email me directly.");
-          if (btn) btn.disabled = false;
-        });
-    });
+				var btn = form.querySelector('[type="submit"]');
+				if (btn) {
+					btn.classList.add("btn--loading");
+					btn.disabled = true;
+				}
 
-    // Clear error styles on input
-    form.querySelectorAll("input, textarea").forEach(function (el) {
-      el.addEventListener("input", function () {
-        this.style.borderColor = "";
-      });
-    });
-  }
+				if (errorBanner) {
+					errorBanner.classList.remove("form-error-banner--visible");
+				}
+
+				fetch(form.action, {
+					method: "POST",
+					body: new FormData(form),
+					headers: { Accept: "application/json" },
+				})
+					.then(function (r) {
+						if (btn) {
+							btn.classList.remove("btn--loading");
+							btn.disabled = false;
+						}
+						if (r.ok) {
+							success.classList.add("form-success--visible");
+							form.style.display = "none";
+						} else {
+							if (errorBanner) {
+								errorBanner.classList.add("form-error-banner--visible");
+							}
+							if (errorBanner)
+								errorBanner.scrollIntoView({
+									behavior: "smooth",
+									block: "center",
+								});
+						}
+					})
+					.catch(function () {
+						if (btn) {
+							btn.classList.remove("btn--loading");
+							btn.disabled = false;
+						}
+						if (errorBanner) {
+							errorBanner.classList.add("form-error-banner--visible");
+							errorBanner.scrollIntoView({
+								behavior: "smooth",
+								block: "center",
+							});
+						}
+					});
+			});
+
+			form.querySelectorAll("input, textarea").forEach(function (el) {
+				el.addEventListener("input", function () {
+					var group = this.closest(".form__group");
+					if (group) group.classList.remove("form__group--error");
+					var errorEl = group ? group.querySelector(".form__error") : null;
+					if (errorEl) errorEl.textContent = "";
+					if (errorBanner) {
+						errorBanner.classList.remove("form-error-banner--visible");
+					}
+				});
+			});
+		}
+
+		function clearErrors(form) {
+			form.querySelectorAll(".form__group--error").forEach(function (g) {
+				g.classList.remove("form__group--error");
+			});
+			form.querySelectorAll(".form__error").forEach(function (e) {
+				e.textContent = "";
+			});
+			if (errorBanner) {
+				errorBanner.classList.remove("form-error-banner--visible");
+			}
+		}
+	});
 })();
