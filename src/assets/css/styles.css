@@ -927,7 +927,7 @@ main .page-footer {
 	.hero {
 		flex: 0 0 auto;
 		justify-content: flex-start;
-		padding-top: calc(var(--section-py));
+		padding-top: var(--space-3xl);
 		text-align: center;
 	}
 
