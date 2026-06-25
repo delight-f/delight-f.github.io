@@ -950,7 +950,7 @@ main .page-footer {
 		margin-right: auto;
 	}
 
-	.cred__group:first-child {
+	.cred__group--first {
 		display: inline-block;
 		width: 100%;
 	}
