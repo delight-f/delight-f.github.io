@@ -1025,16 +1025,16 @@ main .page-footer {
 	padding-top: 0;
 }
 
-.bio__text .philosophy-section + p {
-	padding-left: var(--space-lg);
-	border-left: 3px solid var(--color-accent-warm);
+.philosophy-content {
+	background-color: var(--color-surface-warm);
+	padding: var(--space-lg);
+	border-radius: var(--radius-md);
+	margin-bottom: var(--space-md);
 }
 
-.bio__text .philosophy-section + p + p {
-	padding-left: var(--space-lg);
-	border-left: 3px solid var(--color-accent-warm);
+.philosophy-content p:last-child {
+	margin-bottom: 0;
 }
-
 .pull-quote {
 	font-family: "EB Garamond", Georgia, serif;
 	font-size: calc(var(--text-3xl) * 1.33);
@@ -1044,6 +1044,42 @@ main .page-footer {
 	line-height: 1.2;
 	margin: 0;
 	padding: 0;
+}
+
+/* Section jump-nav */
+.section-nav {
+	text-align: center;
+	margin-bottom: var(--space-xl);
+	font-size: var(--text-sm);
+	font-family: var(--font-body);
+}
+
+.section-nav a {
+	color: var(--color-accent);
+	text-decoration: none;
+	padding: var(--space-xs) var(--space-sm);
+	white-space: nowrap;
+}
+
+.section-nav a:hover {
+	text-decoration: underline;
+}
+
+/* Graduated h2 dividers — lighter weight for later sections */
+.bio__text h2:nth-of-type(2) {
+	border-top-width: 1.5px;
+	padding-top: var(--space-sm);
+}
+
+.bio__text h2:nth-of-type(3) {
+	border-top-width: 1px;
+	border-top-color: var(--color-border);
+	padding-top: var(--space-xs);
+}
+
+.bio__text h2:nth-of-type(4) {
+	border-top: none;
+	padding-top: 0;
 }
 
 @media screen and (max-width: 1024px) {
