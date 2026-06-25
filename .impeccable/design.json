@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-25T03:40:00.000Z",
+  "title": "Design System: Amnestic Anaesthesia",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Deep Teal", "canonical": "#167a6e" },
+      "primary-dark": { "role": "primary", "displayName": "Dark Teal", "canonical": "#0e544b" },
+      "accent": { "role": "accent", "displayName": "Teal Accent", "canonical": "#168a7a" },
+      "accent-warm": { "role": "accent", "displayName": "Coral", "canonical": "#e8835a" },
+      "surface": { "role": "neutral", "displayName": "Off-white", "canonical": "#fafafa" },
+      "surface-card": { "role": "neutral", "displayName": "Card Surface", "canonical": "#f0f1f2" },
+      "surface-dark": { "role": "neutral", "displayName": "Dark Surface", "canonical": "#0f1419" },
+      "text": { "role": "neutral", "displayName": "Near-black", "canonical": "#16181a" },
+      "text-muted": { "role": "neutral", "displayName": "Muted Text", "canonical": "#58636d" },
+      "text-on-dark": { "role": "neutral", "displayName": "Text on Dark", "canonical": "#e2e6ea" },
+      "border": { "role": "neutral", "displayName": "Subtle Border", "canonical": "#d6d9db" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero title only. Source Serif 4 medium." },
+      "body": { "displayName": "Body", "purpose": "All paragraphs and running text. Work Sans regular." },
+      "label": { "displayName": "Label", "purpose": "Form labels, utility text. Work Sans semibold uppercase." }
+    },
+    "shadows": [
+      { "name": "photo-shadow", "value": "0 4px 12px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.06)", "purpose": "Hero photo only. The single shadow on the page." }
+    ],
+    "motion": [
+      { "name": "hero-fade-in", "value": "0.6s ease-out", "purpose": "Hero photo fade-in on page load." },
+      { "name": "card-zoom", "value": "0.3s ease", "purpose": "Qualification card image hover zoom." },
+      { "name": "state-transition", "value": "0.2s ease", "purpose": "Button, link, and nav hover/focus transitions." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "768px" },
+      { "name": "tablet", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Coral CTA button. Used once per page.",
+      "html": "<button class=\"ds-btn-primary\">Get in touch</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 12px 32px; font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.125rem; font-weight: 500; line-height: 1.5; text-decoration: none; border: 2px solid #e8835a; border-radius: 8px; cursor: pointer; background-color: #e8835a; color: #fafafa; text-align: center; white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease; } .ds-btn-primary:hover { background-color: #be5533; border-color: #be5533; } .ds-btn-primary:focus-visible { outline: 2px solid #168a7a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed top nav bar with dark teal background.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav-inner\"><a class=\"ds-nav-link ds-nav-link-active\">Home</a><a class=\"ds-nav-link\">About</a><a class=\"ds-nav-link\">Experience</a><a class=\"ds-nav-link\">Contact</a></div></nav>",
+      "css": ".ds-nav { background-color: #0e544b; height: 3.5rem; display: flex; align-items: center; padding: 0 32px; font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .ds-nav-inner { display: flex; gap: 4px; } .ds-nav-link { color: #e2e6ea; text-decoration: none; padding: 0 24px; font-size: 1.125rem; font-weight: 500; border-radius: 4px; transition: background-color 0.2s ease; line-height: 3.5rem; position: relative; } .ds-nav-link:hover { background-color: rgba(255,255,255,0.08); } .ds-nav-link-active { color: #e2e6ea; } .ds-nav-link-active::after { content: ''; position: absolute; bottom: 0.6rem; left: 50%; transform: translateX(-50%); width: 1.2rem; height: 2px; border-radius: 1px; background-color: #168a7a; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form input with teal focus glow.",
+      "html": "<div class=\"ds-input-group\"><label class=\"ds-label\">Email</label><input class=\"ds-input\" type=\"email\" placeholder=\"your@email.com\"></div>",
+      "css": ".ds-input-group { display: flex; flex-direction: column; gap: 4px; } .ds-label { font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1rem; font-weight: 600; color: #16181a; } .ds-input { width: 100%; padding: 8px 16px; font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1rem; color: #16181a; background-color: #fafafa; border: 1px solid #d6d9db; border-radius: 8px; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input:focus { outline: none; border-color: #168a7a; box-shadow: 0 0 0 3px rgba(22, 122, 110, 0.2); } .ds-input::placeholder { color: #58636d; }"
+    },
+    {
+      "name": "Qualification Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Editorial card with image, title, and description.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-image\"></div><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">Specialist Anaesthesia</h3><p class=\"ds-card-description\">Fellow of the Royal Australian College of Anaesthetists.</p></div></div>",
+      "css": ".ds-card { display: flex; flex-direction: column; } .ds-card-image { width: 100%; aspect-ratio: 3/2; background-color: #f0f1f2; border-radius: 4px; overflow: hidden; transition: transform 0.3s ease; } .ds-card:hover .ds-card-image { transform: scale(1.04); } .ds-card-body { padding: 16px 0; flex: 1; display: flex; flex-direction: column; border-bottom: 1px solid #d6d9db; } .ds-card-title { font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-size: 1.25rem; font-weight: 500; color: #167a6e; margin-bottom: 8px; } .ds-card-description { font-size: 1rem; color: #58636d; line-height: 1.7; flex: 1; }"
+    },
+    {
+      "name": "Hero Section",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Home page hero with photo, credentials, tagline, and single CTA.",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-hero-photo\"></div><div class=\"ds-hero-content\"><h1 class=\"ds-hero-title\">Amnestic Anaesthesia</h1><p class=\"ds-hero-creds\">MBBS · FANZCA · FRACGP · DipPHRM</p><p class=\"ds-hero-tagline\">Triple qualified: anaesthesia · general practice · retrieval medicine</p><button class=\"ds-btn-primary\">Get in touch</button></div></div>",
+      "css": ".ds-hero { display: grid; grid-template-columns: 1.1fr 1.9fr; gap: 64px; align-items: start; padding: 128px 0; max-width: 1152px; margin: 0 auto; } .ds-hero-photo { width: 26rem; max-width: 100%; aspect-ratio: 1/1; border-radius: 9999px; background-color: #e2e6ea; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.06); } .ds-hero-title { font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; line-height: 1.2; color: #16181a; margin-bottom: 16px; } .ds-hero-creds { font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.875rem; color: #58636d; letter-spacing: 0.03em; margin-bottom: 32px; } .ds-hero-tagline { font-size: 1.25rem; color: #16181a; margin-bottom: 48px; max-width: 50rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Consultant's Desk",
+    "overview": "The design sits across a real desk in a real consulting room — not a showroom, not a hospital ward. The papers are arranged. The credentials are visible. The handshake comes next. Every decision lands on the spectrum between clinical precision (anaesthesia, evidence-based medicine) and human warmth (patient care, GP background).",
+    "keyCharacteristics": [
+      "Editorial confidence — content dictates layout, not templates",
+      "Multi-page architecture with distinct URLs and purpose per page",
+      "One CTA per page — frictionless conversion, no competing actions",
+      "Restrained motion — hero photo fade-in, card hover zoom, nothing decorative",
+      "Dark mode as first-class, not a bolt-on"
+    ],
+    "rules": [
+      { "name": "The One CTA Rule", "body": "Coral is reserved exclusively for the primary call to action on each page. It appears once per page.", "section": "colors" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. The hero photo is the only element that earns a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the coral button exactly once per page — as the primary CTA.",
+      "Do keep the hero photo as the only shadowed element on the page.",
+      "Do maintain the teal-coral pairings.",
+      "Do use Source Serif 4 for headings and Work Sans for body copy."
+    ],
+    "donts": [
+      "Don't use gradient text, glassmorphism, or decorative blurs.",
+      "Don't add entrance animations or scroll-triggered reveals.",
+      "Don't expose the email address in plain text.",
+      "Don't use card grids with identical icon-heading-text patterns."
+    ]
+  }
+}

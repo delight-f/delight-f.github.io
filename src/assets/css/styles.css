@@ -3,8 +3,8 @@
    Design tokens + reset + shared component styles
    ============================================================= */
 
-/* ----- Google Fonts: Newsreader + Figtree ----- */
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wdth,wght@75,400;75,500;75,600;100,400;100,450;100,500;100,600&display=swap");
+/* ----- Google Fonts: Source Serif 4 + Work Sans ----- */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;450;500;600&display=swap");
 
 /* ===========================================
    Design Tokens
@@ -26,7 +26,7 @@
 
 	/* ----- Text ----- */
 	--color-text: #16181a;
-	--color-text-muted: #6d767e;
+	--color-text-muted: #58636d;
 	--color-text-on-dark: #e2e6ea;
 	--color-heading-dark: #edf0f3;
 
@@ -39,9 +39,9 @@
 	--color-success: #4a8c6f;
 
 	/* ----- Typography ----- */
-	--font-display: "Newsreader", Georgia, "Times New Roman", serif;
+	--font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 	--font-body:
-		"Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		"Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
 	/* ----- Font size scale ----- */
 	--text-xs: 0.75rem;
@@ -830,6 +830,7 @@ sup {
 	color: var(--color-text-muted);
 	margin-bottom: var(--space-xl);
 	line-height: var(--line-height-small);
+	letter-spacing: 0.03em;
 }
 
 .hero__name {
@@ -843,7 +844,7 @@ sup {
 	font-size: var(--text-xl);
 	color: var(--color-text);
 	margin-bottom: var(--space-2xl);
-	max-width: 42rem;
+	max-width: 50rem;
 	line-height: var(--line-height-small);
 }
 
@@ -858,36 +859,22 @@ sup {
 	font-size: var(--text-lg);
 }
 
-.hero-specialities {
-	margin-top: var(--space-3xl);
-	padding-top: var(--space-2xl);
-	border-top: 1px solid var(--color-accent);
-}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.hero__container {
+		gap: var(--space-xl);
+	}
 
-.hero-specialities__list {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: var(--space-xl);
-}
+	.hero__photo {
+		max-width: 18rem;
+	}
 
-.hero-specialities__item {
-	padding: var(--space-lg);
-	background-color: var(--color-surface-warm);
-	border-radius: var(--radius-md);
-}
+	.hero__title {
+		font-size: 3rem;
+	}
 
-.hero-specialities__item h3 {
-	font-family: var(--font-display);
-	font-size: var(--text-xl);
-	color: var(--color-primary);
-	margin-bottom: var(--space-sm);
-}
-
-.hero-specialities__item p {
-	font-size: var(--text-base);
-	color: var(--color-text-muted);
-	line-height: var(--line-height-small);
-	margin-bottom: 0;
+	.hero__tagline {
+		font-size: var(--text-lg);
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -922,10 +909,6 @@ sup {
 
 	.hero__ctas {
 		justify-content: center;
-	}
-
-	.hero-specialities__list {
-		grid-template-columns: 1fr;
 	}
 }
 
@@ -962,6 +945,7 @@ sup {
 	line-height: var(--line-height-body);
 	margin-bottom: var(--space-md);
 	max-width: 70ch;
+	text-wrap: pretty;
 }
 
 .bio__text ul {
@@ -1049,6 +1033,7 @@ sup {
 	color: var(--color-text-muted);
 	line-height: var(--line-height-normal);
 	flex: 1;
+	text-wrap: pretty;
 }
 
 @media screen and (max-width: 768px) {
@@ -1087,6 +1072,7 @@ sup {
 	margin: 0 auto var(--space-lg);
 	color: var(--color-text);
 	font-size: var(--text-lg);
+	text-wrap: pretty;
 }
 
 .contact-form {
