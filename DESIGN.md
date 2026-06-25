@@ -141,6 +141,7 @@ Dark mode inverts surfaces while keeping the nav dark and the accent coral. Surf
 **Display Font:** Source Serif 4 (with Georgia, Times New Roman fallback)
 **Body Font:** Work Sans (with -apple-system, BlinkMacSystemFont, Segoe UI fallback)
 **Utility Font:** Work Sans, semibold at 0.875rem
+**Quote Accent:** EB Garamond, italic 500 — used exclusively for the pull quote on the about page sidebar. A classical serif that contrasts with Source Serif 4's editorial structure. One-off usage, not part of the general type system.
 
 **Character:** Source Serif 4 carries the precision — a structured serif designed for long-form reading, with optical sizes that keep it elegant at both 4rem display sizes and 1.5rem subheadings. Work Sans softens it with a humanist warmth that never veers into cold geometry. The pairing reads as a medical textbook written by someone who cares about the patient's name.
 

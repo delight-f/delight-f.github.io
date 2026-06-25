@@ -1065,6 +1065,11 @@ main .page-footer {
 	text-decoration: underline;
 }
 
+.bio__cta {
+	text-align: center;
+	margin-top: var(--space-3xl);
+}
+
 /* Graduated h2 dividers — lighter weight for later sections */
 .bio__text h2:nth-of-type(2) {
 	border-top-width: 1.5px;
