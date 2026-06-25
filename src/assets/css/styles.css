@@ -997,6 +997,7 @@ main .page-footer {
 
 .section__heading-name {
 	display: block;
+	white-space: nowrap;
 }
 
 .about-page .bio {
