@@ -3,8 +3,8 @@
    Design tokens + reset + shared component styles
    ============================================================= */
 
-/* ----- Google Fonts: Source Serif 4 + Work Sans ----- */
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;450;500;600&display=swap");
+/* ----- Google Fonts: Source Serif 4 + Work Sans + EB Garamond ----- */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;450;500;600&family=EB+Garamond:ital,wght@0,500;1,500&display=swap");
 
 /* ===========================================
    Design Tokens
@@ -985,10 +985,26 @@ main .page-footer {
 }
 
 .about-page .bio {
-	max-width: 48rem;
+	max-width: 72rem;
 	margin: 0 auto;
 	padding-left: var(--space-lg);
 	padding-right: var(--space-lg);
+}
+
+@media screen and (min-width: 1025px) {
+	.about-page .bio {
+		display: grid;
+		grid-template-columns: 10rem 1fr;
+		gap: var(--space-5xl);
+	}
+
+	.bio__sidebar {
+		position: sticky;
+		top: 50vh;
+		transform: translateY(-50%);
+		align-self: start;
+		padding-right: var(--space-xl);
+	}
 }
 
 .bio__text h2,
@@ -1017,6 +1033,26 @@ main .page-footer {
 .bio__text .philosophy-section + p + p {
 	padding-left: var(--space-lg);
 	border-left: 3px solid var(--color-accent-warm);
+}
+
+.pull-quote {
+	font-family: "EB Garamond", Georgia, serif;
+	font-size: calc(var(--text-3xl) * 1.33);
+	font-style: italic;
+	font-weight: 500;
+	color: var(--color-text);
+	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.pull-quote {
+		font-size: var(--text-2xl);
+		text-align: center;
+		margin: var(--space-2xl) auto;
+		max-width: 28rem;
+	}
 }
 
 .bio__text p {
