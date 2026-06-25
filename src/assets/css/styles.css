@@ -966,7 +966,6 @@ main .page-footer {
 
 	.hero__ctas {
 		justify-content: center;
-		margin-bottom: var(--space-xl);
 	}
 }
 
