@@ -959,8 +959,8 @@ main .page-footer {
 		display: none;
 	}
 
-	.tagline__rest {
-		display: inline-block;
+	.tagline__location {
+		display: block;
 	}
 
 	.hero__ctas {
