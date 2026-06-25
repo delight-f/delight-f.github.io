@@ -1371,19 +1371,19 @@ main .page-footer {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-surface: #121618;
-		--color-surface-warm: #181c1f;
-		--color-surface-card: #1e2326;
+		--color-surface: #0e1816;
+		--color-surface-warm: #141e1c;
+		--color-surface-card: #1a2422;
 		--color-text: #d6dadd;
 		--color-text-muted: #8a9299;
 		--color-accent: #2ea99a;
 		--color-accent-warm: #e8835a;
-		--color-border: #2a3238;
+		--color-border: #25302e;
 		--color-border-dark: rgba(255, 255, 255, 0.1);
 	}
 
 	.hero {
-		background-color: var(--color-surface);
+		background-color: var(--color-surface-warm);
 	}
 
 	.about-page {
@@ -1403,7 +1403,19 @@ main .page-footer {
 	}
 
 	.hero__photo::after {
-		border-color: rgba(255, 255, 255, 0.15);
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	.btn--primary {
+		background-color: var(--color-accent);
+		color: var(--color-text-on-dark);
+		border-color: var(--color-accent);
+	}
+
+	.btn--primary:hover {
+		background-color: #238a7d;
+		border-color: #238a7d;
+		color: var(--color-text-on-dark);
 	}
 
 	.contact-form .form__input {
