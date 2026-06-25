@@ -950,6 +950,19 @@ main .page-footer {
 		margin-right: auto;
 	}
 
+	.cred__group:first-child {
+		display: inline-block;
+		width: 100%;
+	}
+
+	.cred__sep {
+		display: none;
+	}
+
+	.tagline__rest {
+		display: inline-block;
+	}
+
 	.hero__ctas {
 		justify-content: center;
 	}
