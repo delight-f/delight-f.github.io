@@ -110,8 +110,15 @@
 
 				fetch(form.action, {
 					method: "POST",
-					body: new FormData(form),
-					headers: { Accept: "application/json" },
+					body: JSON.stringify({
+						name: form.querySelector('[name="name"]').value,
+						email: form.querySelector('[name="email"]').value,
+						message: form.querySelector('[name="message"]').value,
+					}),
+					headers: {
+						Accept: "application/json",
+						"Content-Type": "application/json",
+					},
 				})
 					.then(function (r) {
 						if (btn) {
